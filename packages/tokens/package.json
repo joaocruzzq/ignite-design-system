@@ -5,6 +5,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "lint": "eslint src/**/*.ts* --fix",
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
   },
@@ -16,6 +17,7 @@
   "devDependencies": {
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
-    "@ignite-ui/ts-config": "*"
+    "@ignite-ui/ts-config": "*",
+    "@ignite-ui/eslint-config": "*"
   }
 }
