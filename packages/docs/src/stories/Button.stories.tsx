@@ -1,20 +1,23 @@
-import { StoryObj, Meta } from "@storybook/react-vite"
+import type { StoryObj, Meta } from "@storybook/react"
 
-import { Button, ButtonProps } from "@ignite-ui/react"
+import { Button } from "@ignite-ui/react"
+import { background } from "storybook/internal/theming"
 
-export default {
-   title: "Button",
+const meta = {
    component: Button,
 
    args: {
       children: "Enviar"
    }
-} as Meta<ButtonProps>
+} satisfies Meta<typeof Button>
 
-export const Primary: StoryObj<ButtonProps> = {}
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Big: StoryObj<ButtonProps> = {
+export const Primary: Story = {}
+
+export const Secondary: Story = {
    args: {
-      size: "big",
+      size: "big"
    }
 }
