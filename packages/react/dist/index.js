@@ -64,6 +64,7 @@ __export(index_exports, {
   Button: () => Button,
   Checkbox: () => Checkbox2,
   Heading: () => Heading,
+  MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
   TextInput: () => TextInput
@@ -477,6 +478,49 @@ function TextInput(_a) {
     /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Input, __spreadValues({}, props))
   ] });
 }
+
+// src/components/MultiStep/styles.ts
+var MultiStepContainer = styled("div", {});
+var Label = styled(Text, {
+  color: "$gray200",
+  defaultVariants: {
+    size: "xs"
+  }
+});
+var Steps = styled("div", {
+  display: "grid",
+  marginTop: "$1",
+  gap: "$2",
+  gridTemplateColumns: "repeat(var(--steps-size), 1fr)"
+});
+var Step = styled("div", {
+  height: "$1",
+  borderRadius: "$px",
+  background: "$gray600",
+  variants: {
+    active: {
+      true: {
+        background: "$gray100"
+      }
+    }
+  }
+});
+
+// src/components/MultiStep/index.tsx
+var import_jsx_runtime4 = require("react/jsx-runtime");
+function MultiStep({ size, currentStep = 1 }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(MultiStepContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Label, { children: [
+      "Passo ",
+      currentStep,
+      " de ",
+      size
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Steps, { css: { "--steps-size": size }, children: Array.from({ length: size }, (_, i) => i + 1).map((step) => {
+      return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Step, { active: currentStep >= step }, step);
+    }) })
+  ] });
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -484,6 +528,7 @@ function TextInput(_a) {
   Button,
   Checkbox,
   Heading,
+  MultiStep,
   Text,
   TextArea,
   TextInput
