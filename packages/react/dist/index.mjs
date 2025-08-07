@@ -17,6 +17,18 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
 
 // ../tokens/dist/index.mjs
 var colors = {
@@ -196,19 +208,19 @@ function Avatar2(props) {
 // src/components/Button.tsx
 var Button = styled("button", {
   all: "unset",
+  minWidth: 120,
+  gap: "$2",
+  padding: "0 $4",
+  cursor: "pointer",
   borderRadius: "$sm",
+  boxSizing: "border-box",
   fontSize: "$sm",
   fontWeight: "$medium",
   fontFamily: "$default",
-  textAlign: "center",
-  minWidth: 120,
-  boxSizing: "border-box",
   display: "flex",
+  textAlign: "center",
   alignItems: "center",
   justifyContent: "center",
-  gap: "$2",
-  cursor: "pointer",
-  padding: "0 $4",
   "&:disabled": {
     cursor: "not-allowed"
   },
@@ -287,10 +299,63 @@ var Heading = styled("h2", {
     size: "md"
   }
 });
+
+// src/components/TextInput/styles.ts
+var TextInputContainer = styled("div", {
+  display: "flex",
+  padding: "$3 $4",
+  alignItems: "baseline",
+  borderRadius: "$sm",
+  border: "2px solid $gray900",
+  background: "$gray900",
+  boxSizing: "border-box",
+  "&:has(input:focus)": {
+    borderColor: "$ignite300"
+  },
+  "&:has(input:disabled)": {
+    opacity: 0.5,
+    cursor: "not-allowed"
+  }
+});
+var Prefix = styled("span", {
+  color: "$gray400",
+  fontSize: "$sm",
+  fontFamily: "$default",
+  fontWeight: "$regular"
+});
+var Input = styled("input", {
+  border: 0,
+  width: "100%",
+  fontSize: "$sm",
+  fontFamily: "$default",
+  fontWeight: "$regular",
+  color: "$white",
+  background: "transparent",
+  "&:focus": {
+    outline: 0
+  },
+  "&:disabled": {
+    cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    color: "$gray400"
+  }
+});
+
+// src/components/TextInput/index.tsx
+import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
+function TextInput(_a) {
+  var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
+  return /* @__PURE__ */ jsxs2(TextInputContainer, { children: [
+    !!prefix && /* @__PURE__ */ jsx2(Prefix, { children: prefix }),
+    /* @__PURE__ */ jsx2(Input, __spreadValues({}, props))
+  ] });
+}
 export {
   Avatar2 as Avatar,
   Box,
   Button,
   Heading,
-  Text
+  Text,
+  TextInput
 };

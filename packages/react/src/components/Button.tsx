@@ -5,20 +5,24 @@ import { ComponentProps } from "react";
 export const Button = styled("button", {
    all: "unset",
 
+   minWidth: 120,
+   
+   gap: "$2",
+   padding: "0 $4",
+   
+   cursor: "pointer",
+
    borderRadius: "$sm",
+   boxSizing: "border-box",
+   
    fontSize: "$sm",
    fontWeight: "$medium",
    fontFamily: "$default",
-   textAlign: "center",
-   minWidth: 120,
-   boxSizing: "border-box",
-
+   
    display: "flex",
+   textAlign: "center",
    alignItems: "center",
    justifyContent: "center",
-   gap: "$2",
-   cursor: "pointer",
-   padding: "0 $4",
 
    "&:disabled": {
       cursor: "not-allowed"
