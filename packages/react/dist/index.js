@@ -64,6 +64,7 @@ __export(index_exports, {
   Button: () => Button,
   Heading: () => Heading,
   Text: () => Text,
+  TextArea: () => TextArea,
   TextInput: () => TextInput
 });
 module.exports = __toCommonJS(index_exports);
@@ -338,6 +339,32 @@ var Heading = styled("h2", {
   }
 });
 
+// src/components/TextArea.tsx
+var TextArea = styled("textarea", {
+  minHeight: 80,
+  padding: "$3 $4",
+  resize: "vertical",
+  borderRadius: "$sm",
+  border: "2px solid $gray900",
+  background: "$gray900",
+  boxSizing: "border-box",
+  color: "$white",
+  fontSize: "$sm",
+  fontFamily: "$default",
+  fontWeight: "$regular",
+  "&:focus": {
+    outline: 0,
+    borderColor: "$ignite300"
+  },
+  "&:disabled": {
+    opacity: 0.5,
+    cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    color: "$gray400"
+  }
+});
+
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
   display: "flex",
@@ -396,5 +423,6 @@ function TextInput(_a) {
   Button,
   Heading,
   Text,
+  TextArea,
   TextInput
 });
