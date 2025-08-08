@@ -9,6 +9,14 @@ const meta = {
    args: {
       src: "https://github.com/joaocruzzq.png",
       alt: "João Pedro Cruz"
+   },
+
+   argTypes: {
+      src: {
+         control: {
+            type: "text"
+         }
+      }
    }
 } satisfies Meta<AvatarProps>
 

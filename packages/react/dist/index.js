@@ -293,7 +293,7 @@ var Button = styled("button", {
         },
         "&:disabled": {
           color: "$gray200",
-          border: "$gray200"
+          border: "2px solid $gray200"
         }
       },
       tertiary: {
