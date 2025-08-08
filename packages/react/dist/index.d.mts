@@ -621,6 +621,9 @@ declare const AvatarImage: _stitches_react_types_styled_component.StyledComponen
 
 type AvatarProps = ComponentProps<typeof AvatarImage>;
 declare function Avatar(props: AvatarProps): react_jsx_runtime.JSX.Element;
+declare namespace Avatar {
+    var displayName: string;
+}
 
 declare const Button: _stitches_react_types_styled_component.StyledComponent<"button", {
     variant?: "primary" | "secondary" | "tertiary" | undefined;
@@ -1239,6 +1242,9 @@ declare const CheckboxContainer: _stitches_react_types_styled_component.StyledCo
 }, {}>>;
 
 declare function Checkbox(props: CheckboxProps): react_jsx_runtime.JSX.Element;
+declare namespace Checkbox {
+    var displayName: string;
+}
 type CheckboxProps = ComponentProps<typeof CheckboxContainer>;
 
 declare const TextArea: _stitches_react_types_styled_component.StyledComponent<"textarea", {}, {}, _stitches_react_types_css_util.CSS<{}, {
@@ -1652,6 +1658,9 @@ type TextInputProps = ComponentProps<typeof Input> & {
     prefix?: string;
 };
 declare function TextInput({ prefix, ...props }: TextInputProps): react_jsx_runtime.JSX.Element;
+declare namespace TextInput {
+    var displayName: string;
+}
 
 declare const MultiStepContainer: _stitches_react_types_styled_component.StyledComponent<"div", {}, {}, _stitches_react_types_css_util.CSS<{}, {
     fonts: {
@@ -1861,5 +1870,8 @@ type MultiStepProps = ComponentProps<typeof MultiStepContainer> & {
     currentStep?: number;
 };
 declare function MultiStep({ size, currentStep }: MultiStepProps): react_jsx_runtime.JSX.Element;
+declare namespace MultiStep {
+    var displayName: string;
+}
 
 export { Avatar, type AvatarProps, Box, type BoxProps, Button, type ButtonProps, Checkbox, type CheckboxProps, Heading, type HeadingProps, MultiStep, type MultiStepProps, Text, TextArea, type TextAreaProps, TextInput, type TextInputProps, type TextProps };
