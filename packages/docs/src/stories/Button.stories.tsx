@@ -10,6 +10,12 @@ const meta = {
 
    args: {
       children: "Send"
+   },
+
+   argTypes: {
+      onClick: {
+         action: "click"
+      }
    }
 } satisfies Meta<ButtonProps>
 
