@@ -1,0 +1,3 @@
+import{j as t}from"./index-qQrcnSWt.js";import{useMDXComponents as s}from"./index-RGRrrpNk.js";import{M as r}from"./blocks-BKl7TlSu.js";import{a as i}from"./index-o97nMHRm.js";import{T as m}from"./TokensGrid-swwCv27S.js";import"./iframe-CWHCwl1X.js";import"./preload-helper-D9Z9MdNV.js";import"./index-CnjfQ7MB.js";function e(n){const o={h1:"h1",...s(),...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(r,{title:"Tokens/Font Weights"}),`
+`,t.jsx(o.h1,{id:"font-weights",children:"Font Weights"}),`
+`,t.jsx(m,{tokens:i})]})}function d(n={}){const{wrapper:o}={...s(),...n.components};return o?t.jsx(o,{...n,children:t.jsx(e,{...n})}):e(n)}export{d as default};
