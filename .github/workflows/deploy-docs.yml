@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Storybook
         working-directory: ./packages/docs
-        run: npm run build-storybook
+        run: npm run build
 
       # Exemplo de deploy para GitHub Pages usando a ação oficial
       - name: Deploy Storybook to GitHub Pages
