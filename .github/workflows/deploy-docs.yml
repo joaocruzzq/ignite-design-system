@@ -16,11 +16,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18  # versão LTS mais estável
+          node-version: 20  # volta para 20 pois o storybook exige
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install  # usa npm install para evitar erro do rollup
 
       - name: Build Storybook
         working-directory: ./packages/docs
