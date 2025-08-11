@@ -1,4 +1,4 @@
-name: Deploy Docs
+name: Deploy Storybook
 
 on:
   push:
@@ -10,29 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Clona o repositório
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Configura Node.js e cache do npm
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      # 3. Instala dependências
       - name: Install dependencies
         run: npm ci
 
-      # 4. Builda todos os pacotes necessários para o docs
-      # O "..." garante que dependências e dependentes serão buildados na ordem correta
-      - name: Build packages
-        run: npx turbo run build --filter=@ignite-ui/tokens... --filter=@ignite-ui/react... --filter=@ignite-ui/docs...
-
-      # 5. Deploy do Storybook (apenas do pacote docs)
-      - name: Deploy Storybook
+      - name: Build Storybook
         working-directory: ./packages/docs
-        run: npm run deploy-storybook -- --ci -- --existing-output-dir=storybook-static
-        env:
-          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+        run: npm run build-storybook
+
+      # Exemplo de deploy para GitHub Pages usando a ação oficial
+      - name: Deploy Storybook to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./packages/docs/storybook-static
