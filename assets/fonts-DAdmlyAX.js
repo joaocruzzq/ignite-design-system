@@ -1,0 +1,3 @@
+import{j as t}from"./index-CGSxoWuk.js";import{useMDXComponents as s}from"./index-DgHcRL0D.js";import{M as r}from"./blocks-CTPpx75N.js";import{b as i}from"./index-B8SajrE4.js";import{T as m}from"./TokensGrid-YaU50xFy.js";import"./iframe-APzwU92A.js";import"./preload-helper-D9Z9MdNV.js";import"./index-DVwRyiPO.js";function e(n){const o={h1:"h1",...s(),...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(r,{title:"Tokens/Font Families"}),`
+`,t.jsx(o.h1,{id:"font-families",children:"Font Families"}),`
+`,t.jsx(m,{tokens:i})]})}function d(n={}){const{wrapper:o}={...s(),...n.components};return o?t.jsx(o,{...n,children:t.jsx(e,{...n})}):e(n)}export{d as default};
