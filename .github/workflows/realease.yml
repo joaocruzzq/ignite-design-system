@@ -16,19 +16,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js and authenticate to npm
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
+          scope: '@cruz-ignite-ui'
+          always-auth: true
+          token: ${{ secrets.NPM_TOKEN }}
 
-      - name: Clean node_modules and lockfile (opcional, só se quiser garantir fresh install)
+      - name: Clean node_modules and lockfile (optional)
         run: |
           rm -rf node_modules
           rm -f package-lock.json
 
-      - name: Install dependencies (including optional)
-        run: npm install --include=optional
+      - name: Install dependencies
+        run: npm install
 
       - name: Rebuild native modules (fix Rollup native dep issue)
         run: npm rebuild
