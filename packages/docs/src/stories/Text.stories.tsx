@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from "@storybook/react"
 
-import { Text, TextProps } from "@ignite-ui/react"
+import { Text, TextProps } from "@cruz-ignite-ui/react"
 
 const meta = {
    title: "Typography/Text",

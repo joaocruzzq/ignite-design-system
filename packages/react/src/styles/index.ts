@@ -6,7 +6,7 @@ import {
    fontSizes,
    fontWeights,
    lineHeights
-} from "@ignite-ui/tokens";
+} from "@cruz-ignite-ui/tokens";
 
 import { createStitches, defaultThemeMap } from "@stitches/react";
 

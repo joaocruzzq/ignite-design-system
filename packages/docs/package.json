@@ -1,5 +1,5 @@
 {
-  "name": "@ignite-ui/docs",
+  "name": "@cruz-ignite-ui/docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,9 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@ignite-ui/eslint-config": "*",
-    "@ignite-ui/react": "*",
-    "@ignite-ui/tokens": "*",
+    "@cruz-ignite-ui/eslint-config": "*",
+    "@cruz-ignite-ui/react": "*",
+    "@cruz-ignite-ui/tokens": "*",
     "phosphor-react": "^1.4.1",
     "polished": "^4.3.1",
     "react": "^19.1.1",

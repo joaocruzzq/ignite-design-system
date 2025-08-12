@@ -1,5 +1,5 @@
 {
-  "name": "@ignite-ui/tokens",
+  "name": "@cruz-ignite-ui/tokens",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -17,7 +17,7 @@
   "devDependencies": {
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
-    "@ignite-ui/ts-config": "*",
-    "@ignite-ui/eslint-config": "*"
+    "@cruz-ignite-ui/ts-config": "*",
+    "@cruz-ignite-ui/eslint-config": "*"
   }
 }

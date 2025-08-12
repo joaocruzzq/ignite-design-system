@@ -1,5 +1,5 @@
 {
-  "name": "@ignite-ui/react",
+  "name": "@cruz-ignite-ui/react",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -15,9 +15,9 @@
   "type": "commonjs",
   "description": "",
   "devDependencies": {
-    "@ignite-ui/eslint-config": "*",
-    "@ignite-ui/tokens": "*",
-    "@ignite-ui/ts-config": "*",
+    "@cruz-ignite-ui/eslint-config": "*",
+    "@cruz-ignite-ui/tokens": "*",
+    "@cruz-ignite-ui/ts-config": "*",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "react": "^19.1.1",
