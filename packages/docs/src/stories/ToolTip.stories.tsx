@@ -3,7 +3,7 @@ import type { StoryObj, Meta } from "@storybook/react"
 import { Text, ToolTip, ToolTipProps } from "@cruz-ignite-ui/react"
 
 const meta = {
-   title: "Surfaces/ToolTip",
+   title: "Feedback/ToolTip",
    component: ToolTip,
 
    args: {
