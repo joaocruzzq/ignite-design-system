@@ -528,6 +528,53 @@ var ToolTip = styled("div", {
   }
 });
 ToolTip.displayName = "ToolTip";
+
+// src/components/Toast/index.tsx
+import { useState } from "react";
+import * as Toast2 from "@radix-ui/react-toast";
+import { X } from "phosphor-react";
+
+// src/components/Toast/styles.ts
+import * as Toast from "@radix-ui/react-toast";
+var ToastContainer = styled(Toast.Root, {
+  display: "grid",
+  position: "relative",
+  rowGap: "$1",
+  padding: "$3 $5",
+  width: "$80",
+  background: "$gray800",
+  borderRadius: "$md",
+  border: "1px solid $gray600"
+});
+var CloseButton = styled(Toast.Action, {
+  right: 0,
+  border: 0,
+  padding: 0,
+  margin: "$4",
+  lineHeight: 0,
+  cursor: "pointer",
+  position: "absolute",
+  color: "$gray200",
+  background: "transparent",
+  "&:hover": {
+    color: "$white"
+  }
+});
+
+// src/components/Toast/index.tsx
+import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+function ToastMessage({ title, description }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return /* @__PURE__ */ jsxs4(Toast2.Provider, { children: [
+    /* @__PURE__ */ jsx5(Button, { size: "sm", onClick: () => setIsOpen(true), children: "Open Toast" }),
+    /* @__PURE__ */ jsxs4(ToastContainer, { open: isOpen, onOpenChange: setIsOpen, children: [
+      /* @__PURE__ */ jsx5(Toast2.Title, { children: /* @__PURE__ */ jsx5(Heading, { size: "sm", css: { color: "$white", lineHeight: "$base" }, children: title }) }),
+      /* @__PURE__ */ jsx5(Toast2.Description, { children: /* @__PURE__ */ jsx5(Text, { size: "sm", css: { color: "$gray200", lineHeight: "$base" }, children: description }) }),
+      /* @__PURE__ */ jsx5(CloseButton, { altText: "close", children: /* @__PURE__ */ jsx5(X, { size: 20 }) })
+    ] }),
+    /* @__PURE__ */ jsx5(Toast2.Viewport, {})
+  ] });
+}
 export {
   Avatar2 as Avatar,
   Box,
@@ -538,6 +585,7 @@ export {
   Text,
   TextArea,
   TextInput,
+  ToastMessage,
   ToolTip,
   config,
   createTheme,

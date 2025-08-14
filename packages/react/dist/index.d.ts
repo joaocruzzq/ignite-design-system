@@ -9,6 +9,7 @@ import * as _stitches_react_types_util from '@stitches/react/types/util';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as Avatar$1 from '@radix-ui/react-avatar';
 import * as Checkbox$1 from '@radix-ui/react-checkbox';
+import * as Toast from '@radix-ui/react-toast';
 
 declare const css: <Composers extends (string | React.ExoticComponent<any> | React.JSXElementConstructor<any> | _stitches_react_types_util.Function | {
     [name: string]: unknown;
@@ -3793,4 +3794,10 @@ declare const ToolTip: _stitches_react_types_styled_component.StyledComponent<"d
 }, {}>>;
 type ToolTipProps = ComponentProps<typeof ToolTip>;
 
-export { Avatar, type AvatarProps, Box, type BoxProps, Button, type ButtonProps, Checkbox, type CheckboxProps, Heading, type HeadingProps, MultiStep, type MultiStepProps, Text, TextArea, type TextAreaProps, TextInput, type TextInputProps, type TextProps, ToolTip, type ToolTipProps, config, createTheme, css, getCssText, globalCss, keyframes, styled, theme };
+declare function ToastMessage({ title, description }: ToastProps): react_jsx_runtime.JSX.Element;
+type ToastProps = ComponentProps<typeof Toast.Provider> & {
+    title: string;
+    description: string;
+};
+
+export { Avatar, type AvatarProps, Box, type BoxProps, Button, type ButtonProps, Checkbox, type CheckboxProps, Heading, type HeadingProps, MultiStep, type MultiStepProps, Text, TextArea, type TextAreaProps, TextInput, type TextInputProps, type TextProps, ToastMessage, type ToastProps, ToolTip, type ToolTipProps, config, createTheme, css, getCssText, globalCss, keyframes, styled, theme };
