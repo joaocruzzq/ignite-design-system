@@ -133,7 +133,7 @@ var {
 
 // src/components/Box.tsx
 var Box = styled("div", {
-  padding: "$4",
+  padding: "$6",
   borderRadius: "$md",
   backgroundColor: "$gray800",
   border: "1px solid $gray600"
@@ -172,8 +172,8 @@ Text.displayName = "Text";
 // src/components/Avatar/styles.ts
 import * as Avatar from "@radix-ui/react-avatar";
 var AvatarContainer = styled(Avatar.Root, {
-  width: "$12",
-  height: "$12",
+  width: "$16",
+  height: "$16",
   overflow: "hidden",
   borderRadius: "$full",
   display: "inline-block"
@@ -227,6 +227,9 @@ var Button = styled("button", {
   justifyContent: "center",
   "&:disabled": {
     cursor: "not-allowed"
+  },
+  "&:focus": {
+    boxShadow: "0 0 0 2px $colors$gray100"
   },
   svg: {
     width: "$4",
@@ -328,7 +331,7 @@ var CheckboxContainer = styled(Checkbox.Root, {
   "&[data-state='checked']": {
     background: "$ignite300"
   },
-  "&:focus": {
+  "&:focus, &[data-state='checked']": {
     border: "2px solid $ignite300"
   }
 });
@@ -397,12 +400,24 @@ TextArea.displayName = "TextArea";
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
   display: "flex",
-  padding: "$3 $4",
-  alignItems: "baseline",
+  alignItems: "center",
   borderRadius: "$sm",
   border: "2px solid $gray900",
   background: "$gray900",
   boxSizing: "border-box",
+  variants: {
+    size: {
+      sm: {
+        padding: "$2 $3"
+      },
+      md: {
+        padding: "$3 $4"
+      }
+    }
+  },
+  defaultVariants: {
+    size: "md"
+  },
   "&:has(input:focus)": {
     borderColor: "$ignite300"
   },
@@ -431,20 +446,21 @@ var Input = styled("input", {
   "&:disabled": {
     cursor: "not-allowed"
   },
-  "&:placeholder": {
+  "&::placeholder": {
     color: "$gray400"
   }
 });
 
 // src/components/TextInput/index.tsx
+import { forwardRef } from "react";
 import { jsx as jsx3, jsxs as jsxs2 } from "react/jsx-runtime";
-function TextInput(_a) {
+var TextInput = forwardRef((_a, ref) => {
   var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
   return /* @__PURE__ */ jsxs2(TextInputContainer, { children: [
     !!prefix && /* @__PURE__ */ jsx3(Prefix, { children: prefix }),
-    /* @__PURE__ */ jsx3(Input, __spreadValues({}, props))
+    /* @__PURE__ */ jsx3(Input, __spreadValues({ ref }, props))
   ] });
-}
+});
 TextInput.displayName = "TextInput";
 
 // src/components/MultiStep/styles.ts
@@ -490,6 +506,28 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/ToolTip.tsx
+var ToolTip = styled("div", {
+  maxWidth: "fit-content",
+  padding: "$3 $4",
+  position: "relative",
+  borderRadius: "$sm",
+  background: "$gray900",
+  "::after": {
+    content: "",
+    width: "$4",
+    height: "$4",
+    display: "flex",
+    position: "absolute",
+    rotate: "45deg",
+    marginTop: "$2",
+    background: "$gray900",
+    left: "50%",
+    transform: "translateX(-50%)"
+  }
+});
+ToolTip.displayName = "ToolTip";
 export {
   Avatar2 as Avatar,
   Box,
@@ -499,5 +537,14 @@ export {
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  ToolTip,
+  config,
+  createTheme,
+  css,
+  getCssText,
+  globalCss,
+  keyframes,
+  styled,
+  theme
 };
