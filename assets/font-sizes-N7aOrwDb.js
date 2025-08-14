@@ -1,3 +1,0 @@
-import{j as t}from"./index-D56jvC7F.js";import{useMDXComponents as s}from"./index-DN7mD_BG.js";import{M as r}from"./blocks-byuM1mod.js";import{f as i}from"./index-B8SajrE4.js";import{T as m}from"./TokensGrid-7sg1_0_c.js";import"./iframe-Cq6Bo3fR.js";import"./preload-helper-D9Z9MdNV.js";import"./index-BIhsn-pn.js";function e(n){const o={h1:"h1",...s(),...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(r,{title:"Tokens/Font Sizes"}),`
-`,t.jsx(o.h1,{id:"font-sizes",children:"Font Sizes"}),`
-`,t.jsx(m,{tokens:i,hasRemValue:!0})]})}function h(n={}){const{wrapper:o}={...s(),...n.components};return o?t.jsx(o,{...n,children:t.jsx(e,{...n})}):e(n)}export{h as default};
